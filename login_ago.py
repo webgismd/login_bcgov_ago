@@ -1,13 +1,9 @@
 #-------------------------------------------------------------------------------
 # Name:        Login to BC's Map Hub with IDIR (aka ESRI Enterprise Account)
-# Purpose:
-#
-# Author:      mrdouvil
-#
+# Author:      Michelle Douville
 # Created:     19/09/2018
-# Copyright:   (c) mrdouvil 2018
 #
-#-------------------------------------------------------------------------------
+# Instructions:
 
 # There are a few steps that you MUST do with your Enterprise Account..before you run this script.
 
@@ -26,7 +22,7 @@
 # These steps will allow you to successfully create an access token that you can use to authenticate requests via python.
 # To use token generated with ArcGIS.GIS module see https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#gis
 # class arcgis.gis.GIS(url=None, username=None, password=None, key_file=None, cert_file=None, verify_cert=True, set_active=True, client_id=None, profile=None, **kwargs)
-
+#-------------------------------------------------------------------------------
 
 import requests
 import json
