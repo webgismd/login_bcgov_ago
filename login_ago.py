@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Name:        Login to BC's Map Hub with IDIR
+# Name:        Login to BC's Map Hub with IDIR (aka ESRI Enterprise Account)
 # Purpose:
 #
 # Author:      mrdouvil
@@ -9,10 +9,10 @@
 #
 #-------------------------------------------------------------------------------
 
-#There are a few steps that you MUST do with your Enterprise Account..before you run this script.
+# There are a few steps that you MUST do with your Enterprise Account..before you run this script.
 
-# 1.) GO HERE FIRST - https://developers.arcgis.com/sign-in/ ArcGIS for Developers and sign in.
-# 2.) Sign in with your enterprise account (IDIR) using the prefix when prompted https://governmentofbc.maps.arcgis.com/
+# 1.) GO HERE FIRST - https://developers.arcgis.com/sign-in/ "ArcGIS for Developers" and sign in.
+# 2.) Sign in with your enterprise account (IDIR) using the prefix when prompted for https://governmentofbc.maps.arcgis.com/
 # 3.) Once signed in you can register a new application in ArcGIS for Developers.
 #       a.) click Dashboard + > New Application with the following properties:
 #           Title: <name of script/purpose/ yada yada"
@@ -21,16 +21,11 @@
 #       b.) On the right side, make note of the following values created for your application:
 #           Client ID
 #           Client Secret
-#           Temporary Token -- this is what you need and by defaul will be valid for 2 hrs
-# These steps will allow you to successfully create an access token that you can use to authenticate requests
-# to use token generated with ArcGIS.GIS module see https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#gis
-# class arcgis.gis.GIS(url=None, username=None, password=None, key_file=None, cert_file=None, verify_cert=True, set_active=True, client_id=None, profile=None, **kwargs)
+#           Temporary Token -- this is what you need and by default will be valid for 2 hrs (this code will re-generate this on the fly with the client ID and Secret combo)
 
-# try:
-#    print('Connecting to {}'.format(portal))
-#    gis = GIS(url=<portal url>, token=<token>)
-# except RuntimeError as ex:
-#    print('Error Connecting to {}'.format(portal))
+# These steps will allow you to successfully create an access token that you can use to authenticate requests via python.
+# To use token generated with ArcGIS.GIS module see https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#gis
+# class arcgis.gis.GIS(url=None, username=None, password=None, key_file=None, cert_file=None, verify_cert=True, set_active=True, client_id=None, profile=None, **kwargs)
 
 
 import requests
@@ -49,7 +44,6 @@ def main():
         'content-type': "application/x-www-form-urlencoded",
         'accept': "application/json",
         'cache-control': "no-cache"
-
         }
 
     response = requests.request("POST", url, data=payload, headers=headers)
@@ -62,8 +56,7 @@ def main():
 
     # Now you can access Json
     tokenhash = data['access_token']
-    #print(tokenhash)
-    
+      
     #the next step just tries to connect with the token as an example
     try:
         print('Connecting to {}'.format(portal))
