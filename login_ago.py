@@ -7,7 +7,7 @@
 
 # There are a few steps that you MUST do with your Enterprise Account..before you run this script.
 
-# 1.) GO HERE FIRST - https://developers.arcgis.com/sign-in/ "ArcGIS for Developers" and sign in.
+# 1.) If you don't have a usable/designated 'Client ID' and 'Client Secret' - GO HERE FIRST - "ArcGIS for Developers" https://developers.arcgis.com/sign-in/ 
 # 2.) Sign in with your enterprise account (IDIR) using the prefix when prompted for https://governmentofbc.maps.arcgis.com/
 # 3.) Once signed in you can register a new application in ArcGIS for Developers.
 #       a.) click Dashboard + > New Application with the following properties:
