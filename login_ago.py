@@ -9,7 +9,7 @@
 
 # 1.) If you don't have a usable/designated 'Client ID' and 'Client Secret' - GO HERE FIRST - "ArcGIS for Developers" https://developers.arcgis.com/sign-in/ 
 # 2.) Sign in with your enterprise account (IDIR) using the prefix when prompted for https://governmentofbc.maps.arcgis.com/
-# 3.) Once signed in you can register a new application in ArcGIS for Developers.
+# 3.) Once signed in you can register a new application in ArcGIS for Developers (more info here - https://developers.arcgis.com/labs/rest/get-an-access-token/).
 #       a.) click Dashboard + > New Application with the following properties:
 #           Title: <name of script/purpose/ yada yada"
 #           Tags: <tags you want to describe use yada yada"
@@ -20,7 +20,7 @@
 #           Temporary Token -- this is what you need and by default will be valid for 2 hrs (this code will re-generate this on the fly with the client ID and Secret combo)
 
 # These steps will allow you to successfully create an access token that you can use to authenticate requests via python.
-# To use token generated with ArcGIS.GIS module see https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#gis
+# To use tokens generated with ArcGIS.GIS module see https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#gis
 # class arcgis.gis.GIS(url=None, username=None, password=None, key_file=None, cert_file=None, verify_cert=True, set_active=True, client_id=None, profile=None, **kwargs)
 #-------------------------------------------------------------------------------
 
